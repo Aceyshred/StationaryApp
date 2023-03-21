@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Iproduct } from './interfaces/iproduct';
 import { ProductsService } from './services/products.service';
 
 @Component({
@@ -7,9 +8,9 @@ import { ProductsService } from './services/products.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'StationaryApp';
+products:Iproduct[];
 
   constructor(private ProductsService:ProductsService){
-    
+    this.products = ProductsService.products;
   }
 }
